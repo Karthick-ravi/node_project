@@ -29,6 +29,17 @@ async function policyUserRegister(req, res) {
                 await asyncForEach(keysUpper, async (key) => {
                     strUserData[key.toLowerCase()] = res[key]
                 })
+                if (strUserData.dob) {
+                    strUserData.dob = new Date(Math.round((strUserData.dob - 25569) * 86400 * 1000));
+                }
+
+                if (strUserData.policy_start_date) {
+                    strUserData.policy_start_date = new Date(Math.round((strUserData.policy_start_date - 25569) * 86400 * 1000));
+                }
+
+                if (strUserData.policy_end_date) {
+                    strUserData.policy_end_date = new Date(Math.round((strUserData.policy_end_date - 25569) * 86400 * 1000));
+                }
                 policyInfoData.push(strUserData)
             })  
             }

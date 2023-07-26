@@ -15,19 +15,14 @@ async function headerValidation(headerColumn) {
         
         if (strUserData) {
 
-            if (!strUserData.s_no) {
+            if (!strUserData.agent) {
                 strUserData.failed = true
-                objUser.message = 'S_No column name is missing'
+                objUser.message = 'Agent column name is missing'
             }
 
-            if (!strUserData.agent_name) {
+            if (!strUserData.firstname) {
                 strUserData.failed = true
-                objUser.message = 'Agent_Name column name is missing'
-            }
-
-            if (!strUserData.first_name) {
-                strUserData.failed = true
-                objUser.message = 'First_Name column name is missing'
+                objUser.message = 'FirstName column name is missing'
             }
 
             if (!strUserData.dob) {
@@ -40,9 +35,9 @@ async function headerValidation(headerColumn) {
                 objUser.message = 'Address column name is missing'
             }
 
-            if (!strUserData.phone_number) {
+            if (!strUserData.phone) {
                 strUserData.failed = true
-                objUser.message = 'Phone_Number column name is missing'
+                objUser.message = 'Phone column name is missing'
             }
 
             if (!strUserData.state) {
@@ -50,15 +45,11 @@ async function headerValidation(headerColumn) {
                 objUser.message = 'State column name is missing'
             }
 
-            if (!strUserData.zip_code) {
+            if (!strUserData.zip) {
                 strUserData.failed = true
-                objUser.message = 'Zip_Code column name is missing'
+                objUser.message = 'Zip column name is missing'
             }
-
-            if (!strUserData.gender) {
-                strUserData.failed = true
-                objUser.message = 'Gender column name is missing'
-            }
+            
 
             if (!strUserData.email) {
                 strUserData.failed = true
@@ -86,14 +77,19 @@ async function headerValidation(headerColumn) {
                 objUser.message = 'Company_Name column name is missing'
             }
 
-            if (!strUserData.policy_startdate) {
+            if (!strUserData.policy_start_date) {
                 strUserData.failed = true
-                objUser.message = 'Policy_StartDate column name is missing'
+                objUser.message = 'Policy_Start_Date column name is missing'
             }
 
-            if (!strUserData.policy_enddate) {
+            if (!strUserData.policy_number) {
                 strUserData.failed = true
-                objUser.message = 'Policy_EndDate column name is missing'
+                objUser.message = 'Policy_Number column name is missing'
+            }
+
+            if (!strUserData.policy_end_date) {
+                strUserData.failed = true
+                objUser.message = 'Policy_End_Date column name is missing'
             }
 
 

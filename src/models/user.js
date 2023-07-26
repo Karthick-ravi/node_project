@@ -4,13 +4,13 @@ const users = new mongoose.Schema(
     {
         firstName : { type : String, required: [true, "Required agent name"] },
         DOB : { type : String, required: [true, "Required Company ID"] },
-        address : { type : String, required: [true, "Required user address"] },
-        gender : { type : String, required: [true, "Required user gender"] },
+        address : { type : String, default: "" },
+        gender : { type : String, default: "" },
         userType : { type : String, required: [true, "Required user type"] },
-        email : { type : String, required: [true, "Required user email"] },
+        email : { type : String, default: "" },
         phone_number : { type : String, required: [true, "Required user phone number"] },
-        state : { type : String, required: [true, "Required user state"] },
-        zip_code : { type : Number, required: [true, "Required user zip code"] }                
+        state : { type : String, default: "" },
+        zip_code : { type : String, default: "" }                
     },
     { timestamps: true, versionKey: false }
 )
