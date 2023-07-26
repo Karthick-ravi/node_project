@@ -3,11 +3,11 @@ import agentModel from "../../models/agent"
 async function createAgent(agentData, companyData) {
     try {
 
-        var agentExists = await agentModel.findOne({ agentName: agentData.agent_name, companyId: companyData._id })
+        var agentExists = await agentModel.findOne({ agentName: agentData.agent, companyId: companyData._id })
 
         if (!agentExists) {
             let newAgentData = {
-                agentName: agentData.agent_name,
+                agentName: agentData.agent,
                 companyId: companyData._id
             }
 

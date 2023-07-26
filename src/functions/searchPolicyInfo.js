@@ -1,3 +1,4 @@
+import moment from "moment"
 import policyInfoModel from "../../src/models/policyInfo"
 import userModel from "../../src/models/user"
 import userAccountModel from "../../src/models/userAccount"
@@ -32,12 +33,12 @@ async function searchPolicyInfo(req, res) {
             await asyncForEach(policyInfoData.docs, async (obj) => {
                 let objPolicy = {}
                 objPolicy.policyNumber = obj.policyNumber
-                objPolicy.policyStartDate = obj.policyStartDate
-                objPolicy.policyEndDate = obj.policyEndDate
+                objPolicy.policyStartDate = moment(obj.policyStartDate).format("YYYY-MM-DD")
+                objPolicy.policyEndDate = moment(obj.policyEndDate).format("YYYY-MM-DD")
                 var getUser = await userModel.findById(obj.userId)
                 if (getUser) {
                     objPolicy.firstName = getUser.firstName
-                    objPolicy.DOB = getUser.DOB
+                    objPolicy.DOB = moment(getUser.DOB).format("YYYY-MM-DD")
                     objPolicy.gender = getUser.gender
                     objPolicy.userId = getUser._id
                 }
