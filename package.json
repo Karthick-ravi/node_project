@@ -12,6 +12,7 @@
     "@babel/cli": "^7.22.9",
     "@babel/preset-env": "^7.22.9",
     "and": "0.0.3",
+    "axios": "^1.4.0",
     "babel-plugin-transform-runtime": "^6.23.0",
     "cors": "^2.8.5",
     "cron": "^2.4.0",
