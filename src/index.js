@@ -19,7 +19,7 @@ server.use(bodyParser.json({ limit: '50mb' }));
 
 server.use("/common", common)
 
-server.listen(port, () => {
+server.listen(port, () => { 
     console.log(`server running at port ${port}`)
     cronJobs()
 })
