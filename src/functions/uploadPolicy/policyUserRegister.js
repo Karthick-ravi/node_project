@@ -47,7 +47,12 @@ async function policyUserRegister(req, res) {
                     throw new Error(validData.message)
                 } else {
                     await asyncForEach(policyInfoData, async (strUserData) => { 
-                                
+
+                        //Here, I will do data validation and require to time.        
+                        //================================================
+                        // finished
+
+
                         var companyData = await createCompany(strUserData)
                         
                         var categoryData = await createCategory(strUserData, companyData)
