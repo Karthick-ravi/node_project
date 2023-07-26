@@ -2,7 +2,7 @@ import userModel from "../../models/user"
 
 async function createUser(userData) {
     try {
-        var userExists = await userModel.findOne({ firstName: userData.firstname, DOB: userData.dob, phone_number: userData.phone})
+        var userExists = await userModel.findOne({ firstName: userData.firstname, phone_number: userData.phone})
 
         if (!userExists) {
             let newUserData = {
