@@ -6,7 +6,7 @@ async function updateEmployee(req, res) {
         let input = req.body
         const employees = await employeeModel.findById(employeeId)
 
-        if (employees) {
+        if (employees) { 
             await employeeModel.findByIdAndUpdate(employeeId, { $set: { salary: input.salary, skills: input.skills } })
             const data = await employeeModel.findById(employeeId)
             res.send({ code: 0, message: "Successfully updated data", data: data })
