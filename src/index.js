@@ -3,7 +3,6 @@ import bodyParser from 'body-parser'
 import cors from 'cors'
 import mongoose from 'mongoose'
 
-import cronJobs from "./helpers/cronJobs"
 import common from "../src/routes/common"
 const useragent = require('express-useragent');
 
@@ -21,5 +20,4 @@ server.use("/common", common)
 
 server.listen(port, () => { 
     console.log(`server running at port ${port}`)
-    cronJobs()
 })

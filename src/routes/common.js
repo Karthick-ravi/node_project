@@ -1,12 +1,13 @@
 import express from "express"
-import {upload} from "../helpers/upload"
-import policyUserRegister from "../functions/uploadPolicy/policyUserRegister"
-import searchPolicyInfo from "../functions/searchPolicyInfo"
-import aggregationByUser from "../functions/aggregationByUser"
+import createEmployee from "../functions/createEmployee"
+import getEmployee from "../functions/getEmployee"
+import updateEmployee from "../functions/updateEmployee"
+import deleteEmployee from "../functions/deleteEmployee"
 
 const Router = express.Router()
-Router.route("/policy/excel/users").post(upload, policyUserRegister)
-Router.route("/policy/search").post(searchPolicyInfo)
-Router.route("/policy/aggregation/user").post(aggregationByUser)
+Router.route("/create/employee").post(createEmployee)
+Router.route("/get/employee").get(getEmployee)
+Router.route("/update/employee/:id").put(updateEmployee)
+Router.route("/delete/employee/:id").delete(deleteEmployee)
 
 export { Router as default }
